@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,34 +84,22 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-3 rounded-xl text-gray-700 hover:text-red-900 hover:bg-gray-50 focus:outline-none transition-all duration-200"
+              aria-label={isOpen ? "Tutup menu" : "Buka menu"}
+              aria-expanded={isOpen}
             >
-              <svg
-                className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <svg
-                className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              {isOpen ? <FaTimes className="h-5 w-5" /> : <FaBars className="h-5 w-5" />}
             </button>
           </div>
         </div>
       </div>
       
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
-          <div className="px-6 py-6 space-y-4">
+      <div
+        className={`md:hidden overflow-hidden bg-white border-t border-gray-100 shadow-lg transition-all duration-500 ease-out ${
+          isOpen ? 'max-h-[640px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2 pointer-events-none'
+        }`}
+      >
+        <div className="px-6 py-6 space-y-4">
             <button 
               onClick={scrollToTop}
               className="block w-full px-4 py-4 rounded-xl text-lg font-medium text-gray-700 hover:text-red-900 hover:bg-gray-50 transition-all duration-200 text-left"
@@ -147,9 +136,19 @@ const Navbar = () => {
             >
               Pesan Sekarang
             </button>
-          </div>
+            <p className="text-center text-sm text-gray-500">
+              Powered by{" "}
+              <a
+                href="https://dekatlokal.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-red-900 hover:text-red-700 transition-colors"
+              >
+                dekatlokal
+              </a>
+            </p>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

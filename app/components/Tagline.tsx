@@ -1,3 +1,5 @@
+import { FaLeaf, FaMagic } from 'react-icons/fa';
+
 interface TaglineProps {
   'data-aos'?: string;
 }
@@ -19,13 +21,16 @@ const Tagline: React.FC<TaglineProps> = ({ 'data-aos': dataAos }) => {
           <div className="lg:w-1/2 text-center lg:text-left">
             <div className="space-y-4 md:space-y-6">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-green-800 leading-tight tracking-wide mb-4">
-                🌿 Pusaka Mandar Terbaik
+                <span className="inline-flex items-center gap-3">
+                  <FaLeaf className="text-green-700" />
+                  Pusaka Mandar Terbaik
+                </span>
               </h2>
               
               <div className="w-20 h-1 bg-gradient-to-r from-green-600 via-green-500 to-green-400 mx-auto lg:mx-0 rounded-full animate-pulse"></div>
               
               <p className="text-lg md:text-xl lg:text-2xl font-bold text-green-700 leading-snug max-w-full lg:max-w-2xl mb-4">
-                ✨ Mengeringkan Luka Cepat & Sembuh Total
+                Mengeringkan Luka Cepat & Sembuh Total
               </p>
               
               <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 text-sm md:text-base lg:text-lg font-semibold text-green-600">
@@ -78,13 +83,16 @@ const Tagline: React.FC<TaglineProps> = ({ 'data-aos': dataAos }) => {
           {/* Mobile: Content */}
           <div className="space-y-4 md:space-y-6">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-green-800 leading-tight tracking-wide mb-4">
-              🌿 Pusaka Mandar Terbaik
+              <span className="inline-flex items-center justify-center gap-3">
+                <FaLeaf className="text-green-700" />
+                Pusaka Mandar Terbaik
+              </span>
             </h2>
             
             <div className="w-20 h-1 bg-gradient-to-r from-green-600 via-green-500 to-green-400 mx-auto rounded-full animate-pulse"></div>
             
             <p className="text-lg md:text-xl lg:text-2xl font-bold text-green-700 leading-snug max-w-5xl mx-auto mb-4">
-              ✨ Mengeringkan Luka Cepat & Sembuh Total
+              Mengeringkan Luka Cepat & Sembuh Total
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm md:text-base lg:text-lg font-semibold text-green-600">
@@ -135,9 +143,9 @@ const Tagline: React.FC<TaglineProps> = ({ 'data-aos': dataAos }) => {
             href="#produk" 
             className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer"
           >
-            <span className="text-lg">🌿</span>
+            <FaLeaf className="text-lg" />
             <span>Coba Sekarang</span>
-            <span className="text-lg">✨</span>
+            <FaMagic className="text-lg" />
           </a>
         </div>
       </div>

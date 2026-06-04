@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 
 interface TestimoniProps {
   'data-aos'?: string;
@@ -77,7 +78,10 @@ const Testimoni: React.FC<TestimoniProps> = ({ 'data-aos': dataAos }) => {
         <div className="text-center mt-12 max-w-4xl mx-auto">
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200/50 shadow-lg">
             <p className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 mb-4">
-              🌟 Dan masih banyak lainnya!
+              <span className="inline-flex items-center justify-center gap-3">
+                <FaStar className="text-yellow-500" />
+                <span>Dan masih banyak lainnya!</span>
+              </span>
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               Ribuan pelanggan telah merasakan manfaat Minyak Pamboang Pusaka Mandar dan berbagi kisah kesembuhan mereka. 

@@ -1,4 +1,6 @@
 import React from 'react';
+import type { IconType } from 'react-icons';
+import { FaBoxOpen, FaHome, FaMobileAlt, FaTruck } from 'react-icons/fa';
 
 interface AlurProps {
   'data-aos'?: string;
@@ -10,27 +12,32 @@ const Alur: React.FC<AlurProps> = ({ 'data-aos': dataAos }) => {
       number: 1,
       title: "Pemesanan",
       description: "Lakukan pemesanan melalui Shopee, TikTok Shop, atau WhatsApp",
-      icon: "📱"
+      Icon: FaMobileAlt
     },
     {
       number: 2,
       title: "Proses & Kemas",
       description: "Pesanan diproses dan dikemas dengan aman untuk pengiriman",
-      icon: "📦"
+      Icon: FaBoxOpen
     },
     {
       number: 3,
       title: "Pengiriman",
       description: "Paket dikirim melalui kurir ekspedisi terpercaya dengan nomor resi",
-      icon: "🚚"
+      Icon: FaTruck
     },
     {
       number: 4,
       title: "Tiba di Tujuan",
       description: "Produk sampai dengan aman dalam 2-5 hari kerja",
-      icon: "🏠"
+      Icon: FaHome
     }
-  ];
+  ] satisfies Array<{
+    number: number;
+    title: string;
+    description: string;
+    Icon: IconType;
+  }>;
 
   return (
     <section id="alur" className="py-24 bg-transparent" data-aos={dataAos}>
@@ -57,7 +64,9 @@ const Alur: React.FC<AlurProps> = ({ 'data-aos': dataAos }) => {
                 </div>
                 
                 {/* Icon */}
-                <div className="text-4xl mb-4 bg-white rounded-2xl shadow-md p-3 w-16 h-16 flex items-center justify-center border border-gray-100/50 group-hover:shadow-lg transition-all duration-300">{step.icon}</div>
+                <div className="text-3xl text-green-800 mb-4 bg-white rounded-2xl shadow-md p-3 w-16 h-16 flex items-center justify-center border border-gray-100/50 group-hover:shadow-lg transition-all duration-300">
+                  <step.Icon />
+                </div>
                 
                 {/* Content */}
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>

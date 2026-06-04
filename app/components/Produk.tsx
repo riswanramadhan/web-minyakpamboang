@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FaCheck, FaLeaf, FaStar, FaUsers } from 'react-icons/fa';
 
 interface ProdukProps {
   'data-aos'?: string;
@@ -116,25 +117,25 @@ const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-600">🌿</span>
+                      <FaLeaf className="text-green-600" />
                     </div>
                     <span className="text-gray-700">100% Herbal Alami</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-600">✓</span>
+                      <FaCheck className="text-green-600" />
                     </div>
                     <span className="text-gray-700">BPOM Terdaftar</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-600">👨‍👩‍👧‍👦</span>
+                      <FaUsers className="text-green-600" />
                     </div>
                     <span className="text-gray-700">Warisan Keluarga</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-600">⭐</span>
+                      <FaStar className="text-green-600" />
                     </div>
                     <span className="text-gray-700">Kualitas Premium</span>
                   </div>
@@ -241,25 +242,25 @@ const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600">🌿</span>
+                    <FaLeaf className="text-green-600" />
                   </div>
                   <span className="text-gray-700">100% Herbal Alami</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600">✓</span>
+                    <FaCheck className="text-green-600" />
                   </div>
                   <span className="text-gray-700">BPOM Terdaftar</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600">👨‍👩‍👧‍👦</span>
+                    <FaUsers className="text-green-600" />
                   </div>
                   <span className="text-gray-700">Warisan Keluarga</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600">⭐</span>
+                    <FaStar className="text-green-600" />
                   </div>
                   <span className="text-gray-700">Kualitas Premium</span>
                 </div>

@@ -13,7 +13,7 @@ const WelcomeSection: React.FC<WelcomeSectionProps> = ({ 'data-aos': dataAos }) 
               Selamat Datang
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl font-bold text-green-700 leading-snug">
-              di website kami 😊
+              di website kami
             </p>
           </div>
           
