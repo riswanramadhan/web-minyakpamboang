@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FaLeaf, FaMagic } from 'react-icons/fa';
 
 interface TaglineProps {
@@ -60,9 +61,14 @@ const Tagline: React.FC<TaglineProps> = ({ 'data-aos': dataAos }) => {
                 
                 {/* Image with enhanced styling */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-3xl">
-                  <img 
+                  <Image
                     src="/cewedanluka.jpg" 
-                    alt="Bukti Penggunaan Minyak Pamboang - Luka Cepat Sembuh" 
+                    alt="Dokumentasi penggunaan Minyak Pamboang Pusaka Mandar untuk perawatan tubuh tradisional"
+                    width={1376}
+                    height={768}
+                    loading="lazy"
+                    sizes="(min-width: 1024px) 50vw, calc(100vw - 48px)"
+                    decoding="async"
                     className="w-full h-auto object-contain"
                   />
                   
@@ -120,9 +126,14 @@ const Tagline: React.FC<TaglineProps> = ({ 'data-aos': dataAos }) => {
               
               {/* Image with enhanced styling */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-3xl">
-                <img 
+                <Image
                   src="/cewedanluka.jpg" 
-                  alt="Bukti Penggunaan Minyak Pamboang - Luka Cepat Sembuh" 
+                  alt="Dokumentasi penggunaan Minyak Pamboang Pusaka Mandar untuk perawatan tubuh tradisional"
+                  width={1376}
+                  height={768}
+                  loading="lazy"
+                  sizes="calc(100vw - 48px)"
+                  decoding="async"
                   className="w-full h-auto object-contain"
                 />
                 

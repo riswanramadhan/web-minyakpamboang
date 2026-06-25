@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 
@@ -53,9 +54,14 @@ const Testimoni: React.FC<TestimoniProps> = ({ 'data-aos': dataAos }) => {
               key={index}
               className="relative aspect-square rounded-2xl overflow-hidden border-2 border-green-300/60 shadow-lg group"
             >
-              <img 
+              <Image
                 src={photo}
-                alt={`Testimoni ${index + 1}`}
+                alt={`Dokumentasi testimoni pelanggan Minyak Pamboang Pusaka Mandar ${index + 1}`}
+                width={1080}
+                height={1080}
+                loading="lazy"
+                sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               
@@ -63,6 +69,7 @@ const Testimoni: React.FC<TestimoniProps> = ({ 'data-aos': dataAos }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 right-4">
                   <button
+                    type="button"
                     onClick={() => openImage(photo)}
                     className="w-full bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-center hover:bg-white hover:scale-105 transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg"
                   >
@@ -106,7 +113,9 @@ const Testimoni: React.FC<TestimoniProps> = ({ 'data-aos': dataAos }) => {
             <div className="relative max-w-4xl max-h-[90vh] w-full flex items-center justify-center animate-scaleIn">
               {/* Close button */}
               <button
+                type="button"
                 onClick={closeImage}
+                aria-label="Tutup gambar testimoni"
                 className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10 animate-slideDown"
               >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,9 +124,14 @@ const Testimoni: React.FC<TestimoniProps> = ({ 'data-aos': dataAos }) => {
               </button>
               
               {/* Image container - auto size */}
-              <img 
+              <Image
                 src={selectedImage}
-                alt="Testimoni"
+                alt="Dokumentasi testimoni pelanggan Minyak Pamboang Pusaka Mandar"
+                width={1080}
+                height={1080}
+                loading="lazy"
+                sizes="100vw"
+                decoding="async"
                 className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
               />
             </div>

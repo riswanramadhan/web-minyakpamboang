@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -32,9 +33,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <img 
+            <Image
               src="/logo.png" 
-              alt="Minyak Pamboang" 
+              alt="Logo Minyak Pamboang Pusaka Mandar"
+              width={1272}
+              height={832}
+              loading="eager"
+              decoding="async"
               className="h-12 w-auto"
             />
           </div>
@@ -139,7 +144,7 @@ const Navbar = () => {
             <p className="text-center text-sm text-gray-500">
               Powered by{" "}
               <a
-                href="https://dekatlokal.com"
+                href="https://dekatlokal.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-red-900 hover:text-red-700 transition-colors"

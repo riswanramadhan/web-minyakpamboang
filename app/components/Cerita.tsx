@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface CeritaProps {
   'data-aos'?: string;
 }
@@ -30,9 +32,14 @@ const Cerita: React.FC<CeritaProps> = ({ 'data-aos': dataAos }) => {
 
                 {/* Image */}
                 <div className="relative w-64 h-80 rounded-2xl overflow-hidden shadow-xl border border-green-200">
-                  <img
+                  <Image
                     src="/cerita2.jpg"
-                    alt="Warisan Budaya"
+                    alt="Cerita warisan budaya Minyak Pamboang Pusaka Mandar"
+                    width={960}
+                    height={1280}
+                    loading="lazy"
+                    sizes="256px"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -49,9 +56,14 @@ const Cerita: React.FC<CeritaProps> = ({ 'data-aos': dataAos }) => {
 
                 {/* Image */}
                 <div className="relative w-64 h-80 rounded-2xl overflow-hidden shadow-xl border border-green-200">
-                  <img
+                  <Image
                     src="/cerita1.jpg"
-                    alt="Warisan Leluhur"
+                    alt="Ilustrasi warisan leluhur Minyak Pamboang Pusaka Mandar"
+                    width={1280}
+                    height={1240}
+                    loading="lazy"
+                    sizes="256px"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -114,9 +126,14 @@ const Cerita: React.FC<CeritaProps> = ({ 'data-aos': dataAos }) => {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-400/40 to-green-600/30 rounded-2xl blur-xl"></div>
 
                 <div className="relative w-40 h-56 rounded-2xl overflow-hidden shadow-xl border border-green-200">
-                  <img
+                  <Image
                     src="/cerita2.jpg"
-                    alt="Warisan Budaya"
+                    alt="Cerita warisan budaya Minyak Pamboang Pusaka Mandar"
+                    width={960}
+                    height={1280}
+                    loading="lazy"
+                    sizes="160px"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -131,9 +148,14 @@ const Cerita: React.FC<CeritaProps> = ({ 'data-aos': dataAos }) => {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-400/40 to-green-600/30 rounded-2xl blur-xl"></div>
 
                 <div className="relative w-40 h-56 rounded-2xl overflow-hidden shadow-xl border border-green-200">
-                  <img
+                  <Image
                     src="/cerita1.jpg"
-                    alt="Warisan Leluhur"
+                    alt="Ilustrasi warisan leluhur Minyak Pamboang Pusaka Mandar"
+                    width={1280}
+                    height={1240}
+                    loading="lazy"
+                    sizes="160px"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>

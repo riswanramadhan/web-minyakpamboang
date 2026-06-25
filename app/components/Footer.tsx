@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaFacebookF, FaInfoCircle, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaTiktok } from 'react-icons/fa';
 
 interface FooterProps {
@@ -10,9 +11,13 @@ const Footer: React.FC<FooterProps> = ({ 'data-aos': dataAos }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="mb-8 md:mb-0">
-            <img
+            <Image
               src="/logo.png"
-              alt="Minyak Pamboang Pusaka Mandar"
+              alt="Logo Minyak Pamboang Pusaka Mandar"
+              width={1272}
+              height={832}
+              loading="lazy"
+              decoding="async"
               className="h-20 w-auto object-contain mb-4 brightness-0 invert"
             />
             <p className="text-blue-100 mb-6 leading-relaxed">
@@ -43,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ 'data-aos': dataAos }) => {
           </div>
 
           <div className="md:mx-auto">
-            <h4 className="text-lg font-semibold mb-4">Menu</h4>
+            <h2 className="text-lg font-semibold mb-4">Menu</h2>
             <ul className="space-y-3">
               <li><a href="#hero" className="text-blue-100 hover:text-white transition-colors duration-200">Beranda</a></li>
               <li><a href="#produk" className="text-blue-100 hover:text-white transition-colors duration-200">Produk</a></li>
@@ -53,7 +58,7 @@ const Footer: React.FC<FooterProps> = ({ 'data-aos': dataAos }) => {
           </div>
 
           <div className="md:mx-auto">
-            <h4 className="text-lg font-semibold mb-4">Kontak</h4>
+            <h2 className="text-lg font-semibold mb-4">Kontak</h2>
             <ul className="space-y-3 text-blue-100">
               <li className="flex items-start">
                 <FaInfoCircle className="mr-3 mt-1 flex-shrink-0 text-white" />
@@ -71,24 +76,36 @@ const Footer: React.FC<FooterProps> = ({ 'data-aos': dataAos }) => {
           </div>
 
           <div className="md:mx-auto">
-            <h4 className="text-lg font-semibold mb-4">Mitra Kami</h4>
+            <h2 className="text-lg font-semibold mb-4">Mitra Kami</h2>
             <p className="text-blue-100 mb-6 leading-relaxed">
               Didukung oleh mitra terpercaya kami.
             </p>
             <div className="flex flex-col items-start space-y-5">
-              <img
+              <Image
                 src="/dekat-lokal.png"
-                alt="Dekat Lokal"
+                alt="Logo DekatLokal partner digital Minyak Pamboang Pusaka Mandar"
+                width={2771}
+                height={1124}
+                loading="lazy"
+                decoding="async"
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
-              <img
+              <Image
                 src="/rumah-bumn.png"
-                alt="Rumah BUMN"
+                alt="Logo Rumah BUMN Makassar pendukung Minyak Pamboang Pusaka Mandar"
+                width={2433}
+                height={1472}
+                loading="lazy"
+                decoding="async"
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
-              <img
+              <Image
                 src="/bank-bri.png"
-                alt="Bank BRI"
+                alt="Logo Bank BRI pendukung Minyak Pamboang Pusaka Mandar"
+                width={2925}
+                height={693}
+                loading="lazy"
+                decoding="async"
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
             </div>
@@ -99,7 +116,7 @@ const Footer: React.FC<FooterProps> = ({ 'data-aos': dataAos }) => {
           <p>
             &copy; {new Date().getFullYear()} Minyak Pamboang Pusaka Mandar. All rights reserved | Powered by{" "}
             <a
-              href="https://dekatlokal.com"
+              href="https://dekatlokal.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-white hover:text-red-100 transition-colors"

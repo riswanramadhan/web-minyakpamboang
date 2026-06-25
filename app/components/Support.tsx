@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface SupportProps {
   'data-aos'?: string;
 }
@@ -18,27 +20,39 @@ const Support: React.FC<SupportProps> = ({ 'data-aos': dataAos }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-6xl mx-auto">
           <div className="flex justify-center group">
             <div className="bg-white rounded-2xl w-64 h-40 flex items-center justify-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100/50">
-              <img 
+              <Image
                 src="/dekat-lokal.png" 
-                alt="DekatLokal"
+                alt="Logo DekatLokal partner digital Minyak Pamboang Pusaka Mandar"
+                width={2771}
+                height={1124}
+                loading="lazy"
+                decoding="async"
                 className="object-contain h-28 w-56"
               />
             </div>
           </div>
           <div className="flex justify-center group">
             <div className="bg-white rounded-2xl w-64 h-40 flex items-center justify-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100/50">
-              <img 
+              <Image
                 src="/rumah-bumn.png" 
-                alt="Rumah BUMN"
+                alt="Logo Rumah BUMN Makassar pendukung Minyak Pamboang Pusaka Mandar"
+                width={2433}
+                height={1472}
+                loading="lazy"
+                decoding="async"
                 className="object-contain h-28 w-56"
               />
             </div>
           </div>
           <div className="flex justify-center group">
             <div className="bg-white rounded-2xl w-64 h-40 flex items-center justify-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100/50">
-              <img 
+              <Image
                 src="/bank-bri.png" 
-                alt="Bank BRI"
+                alt="Logo Bank BRI pendukung Minyak Pamboang Pusaka Mandar"
+                width={2925}
+                height={693}
+                loading="lazy"
+                decoding="async"
                 className="object-contain h-28 w-56"
               />
             </div>

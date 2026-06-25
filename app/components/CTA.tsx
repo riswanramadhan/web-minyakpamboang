@@ -1,6 +1,13 @@
+import Image from "next/image";
+
 interface CTAProps {
   'data-aos'?: string;
 }
+
+const shopeeStoreUrl = "https://shopee.co.id/minyak.pamboang2020bpom?categoryId=100001&entryPoint=ShopByPDP&itemId=11697849304";
+const whatsappUrl = `https://wa.me/6281341263588?text=${encodeURIComponent(
+  "Halo Kak, saya dapat info dari website DekatLokal Minyak Pamboang Pusaka Mandar. Saya ingin bertanya tentang produk dan pemesanan."
+)}`;
 
 const CTA: React.FC<CTAProps> = ({ 'data-aos': dataAos }) => {
   return (
@@ -19,27 +26,35 @@ const CTA: React.FC<CTAProps> = ({ 'data-aos': dataAos }) => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <a 
-              href="https://shopee.co.id/minyak.pamboang2020bpom?categoryId=100001&entryPoint=ShopByPDP&itemId=11697849304"
+              href={shopeeStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-1 px-6 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-lg flex items-center justify-center gap-3"
             >
-              <img 
+              <Image
                 src="/shopee.png" 
-                alt="Shopee" 
+                alt="Logo Shopee"
+                width={1920}
+                height={1080}
+                loading="lazy"
+                decoding="async"
                 className="w-16 h-16 object-contain"
               />
               Kunjungi Toko
             </a>
             <a 
-              href="https://wa.me/6281341263588?text=Hai%20kak%2C%20saya%20ingin%20memesan%20Minyak%20Pamboang%20Pusaka%20"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-gray-900 hover:bg-gray-50 font-semibold py-1 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 text-lg flex items-center justify-center gap-3 border-2 border-green-400/50 hover:border-green-500/70 min-w-[180px] sm:min-w-[200px]"
             >
-              <img 
+              <Image
                 src="/whatsapp.png" 
-                alt="WhatsApp" 
+                alt="Logo WhatsApp"
+                width={1920}
+                height={1080}
+                loading="lazy"
+                decoding="async"
                 className="w-16 h-16 object-contain"
               />
               Hubungi Admin

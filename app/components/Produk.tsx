@@ -1,7 +1,39 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { FaCheck, FaLeaf, FaStar, FaUsers } from 'react-icons/fa';
+
+const shopeeProductUrl = "https://shopee.co.id/Obat-Luka-Bakar-Luka-Diabetes-Luka-Jahitan-Minyak-Pamboang-Pusaka-Mandar-Asli-1-btl-70ml-i.102994650.11697849304?extraParams=%7B%22display_model_id%22%3A107382677335%2C%22model_selection_logic%22%3A3%7D";
+const productWhatsAppUrl = `https://wa.me/6281341263588?text=${encodeURIComponent(
+  "Halo Kak, saya dapat info dari website DekatLokal Minyak Pamboang Pusaka Mandar. Saya ingin pesan Minyak Pamboang Pusaka ukuran 70 ml."
+)}`;
+const productImages = [
+  {
+    src: "/produk/utama.png",
+    alt: "Botol Minyak Pamboang Pusaka ukuran 70 ml",
+    width: 1080,
+    height: 1080,
+  },
+  {
+    src: "/produk/produk1.jpeg",
+    alt: "Produk Minyak Pamboang Pusaka Mandar dalam kemasan",
+    width: 1280,
+    height: 853,
+  },
+  {
+    src: "/produk/produk2.jpeg",
+    alt: "Kemasan Minyak Pamboang Pusaka Mandar ukuran 70 ml",
+    width: 1280,
+    height: 853,
+  },
+  {
+    src: "/produk/produk3.jpeg",
+    alt: "Foto produk Minyak Pamboang Pusaka Mandar",
+    width: 1280,
+    height: 853,
+  },
+];
 
 interface ProdukProps {
   'data-aos'?: string;
@@ -9,14 +41,7 @@ interface ProdukProps {
 
 const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  // Multiple photos for single product
-  const productImages = [
-    "/produk/utama.png",
-    "/produk/produk1.jpeg",
-    "/produk/produk2.jpeg", 
-    "/produk/produk3.jpeg"
-  ];
+  const currentImage = productImages[currentImageIndex];
 
   const selectImage = (index: number) => {
     setCurrentImageIndex(index);
@@ -56,9 +81,14 @@ const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-transparent rounded-3xl blur-2xl -z-10 scale-110"></div>
                 
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10">
-                  <img 
-                    src={productImages[currentImageIndex]}
-                    alt="Minyak Pamboang Pusaka"
+                  <Image
+                    src={currentImage.src}
+                    alt={currentImage.alt}
+                    width={currentImage.width}
+                    height={currentImage.height}
+                    loading="lazy"
+                    sizes="(min-width: 1024px) 50vw, calc(100vw - 48px)"
+                    decoding="async"
                     className="w-full h-full object-cover transition-all duration-700 ease-in-out"
                   />
                 </div>
@@ -69,16 +99,23 @@ const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
                 {productImages.slice(0, 3).map((image, index) => (
                   <button
                     key={index}
+                    type="button"
                     onClick={() => selectImage(index)}
+                    aria-label={`Lihat foto ${image.alt}`}
                     className={`relative aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg ${
                       currentImageIndex === index 
                         ? 'border-green-500 shadow-lg scale-105' 
                         : 'border-gray-200 hover:border-green-400'
                     }`}
                   >
-                    <img 
-                      src={image}
-                      alt={`Produk ${index + 1}`}
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                      loading="lazy"
+                      sizes="(min-width: 1024px) 160px, 30vw"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                     {currentImageIndex === index && (
@@ -151,19 +188,19 @@ const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
                     </div>
                   </div>
                   <div className="flex flex-col items-center gap-3 w-full">
-                    <a href="https://shopee.co.id/Obat-Luka-Bakar-Luka-Diabetes-Luka-Jahitan-Minyak-Pamboang-Pusaka-Mandar-Asli-1-btl-70ml-i.102994650.11697849304?extraParams=%7B%22display_model_id%22%3A107382677335%2C%22model_selection_logic%22%3A3%7D" target="_blank" rel="noopener noreferrer" className="block w-full">
+                    <a href={shopeeProductUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
                       <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-1 w-full flex items-center gap-3 h-16 overflow-hidden">
-                        <img src="/shopee.png" alt="Shopee" className="w-20 h-20 object-contain" />
+                        <Image src="/shopee.png" alt="Logo Shopee" width={1920} height={1080} loading="lazy" decoding="async" className="w-20 h-20 object-contain" />
                         <span className="text-lg flex-1 text-center">Beli di Shopee</span>
                       </button>
                     </a>
-                    <a href="https://wa.me/6281341263588?text=Hai%20kak%2C%20saya%20ingin%20memesan%20Minyak%20Pamboang%2070ml" target="_blank" rel="noopener noreferrer" className="block w-full">
+                    <a href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
                       <button className="bg-white hover:bg-gray-50 text-green-600 font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-1 w-full flex items-center gap-3 border-2 border-green-500 relative overflow-hidden h-16">
                         {/* Glow stroke effect */}
                         <div className="absolute inset-0 bg-green-500/20 rounded-xl blur-md -z-10"></div>
                         <div className="absolute inset-0 bg-green-400/15 rounded-xl blur-lg -z-10 scale-110"></div>
                         <div className="absolute inset-0 bg-green-300/10 rounded-xl blur-xl -z-10 scale-125"></div>
-                        <img src="/whatsapp.png" alt="WhatsApp" className="w-20 h-20 object-contain relative z-10" />
+                        <Image src="/whatsapp.png" alt="Logo WhatsApp" width={1920} height={1080} loading="lazy" decoding="async" className="w-20 h-20 object-contain relative z-10" />
                         <span className="relative z-10 text-lg flex-1 text-center">Hubungi Admin</span>
                       </button>
                     </a>
@@ -183,9 +220,14 @@ const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
               <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-transparent rounded-3xl blur-2xl -z-10 scale-110"></div>
               
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10 mb-6">
-                <img 
-                  src={productImages[currentImageIndex]}
-                  alt="Minyak Pamboang Pusaka"
+                <Image
+                  src={currentImage.src}
+                  alt={currentImage.alt}
+                  width={currentImage.width}
+                  height={currentImage.height}
+                  loading="lazy"
+                  sizes="calc(100vw - 48px)"
+                  decoding="async"
                   className="w-full h-full object-cover transition-all duration-700 ease-in-out"
                 />
               </div>
@@ -195,16 +237,23 @@ const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
                 {productImages.slice(0, 3).map((image, index) => (
                   <button
                     key={index}
+                    type="button"
                     onClick={() => selectImage(index)}
+                    aria-label={`Lihat foto ${image.alt}`}
                     className={`relative aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg ${
                       currentImageIndex === index 
                         ? 'border-green-500 shadow-lg scale-105' 
                         : 'border-gray-200 hover:border-green-400'
                     }`}
                   >
-                    <img 
-                      src={image}
-                      alt={`Produk ${index + 1}`}
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                      loading="lazy"
+                      sizes="30vw"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                     {currentImageIndex === index && (
@@ -276,19 +325,19 @@ const Produk: React.FC<ProdukProps> = ({ 'data-aos': dataAos }) => {
                   </div>
                 </div>
                 <div className="flex flex-col items-center gap-3 w-full">
-                  <a href="https://shopee.co.id/Obat-Luka-Bakar-Luka-Diabetes-Luka-Jahitan-Minyak-Pamboang-Pusaka-Mandar-Asli-1-btl-70ml-i.102994650.11697849304?extraParams=%7B%22display_model_id%22%3A107382677335%2C%22model_selection_logic%22%3A3%7D" target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <a href={shopeeProductUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
                     <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-1 w-full flex items-center gap-2 h-12 overflow-hidden">
-                      <img src="/shopee.png" alt="Shopee" className="w-16 h-16 object-contain" />
+                      <Image src="/shopee.png" alt="Logo Shopee" width={1920} height={1080} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />
                       <span className="text-base">Beli di Shopee</span>
                     </button>
                   </a>
-                  <a href="https://wa.me/6281341263588?text=Hai%20kak%2C%20saya%20ingin%20memesan%20Minyak%20Pamboang%2070ml" target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <a href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
                     <button className="bg-white hover:bg-gray-50 text-green-600 font-semibold px-6 py-2 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-1 w-full flex items-center gap-2 border-2 border-green-500 relative overflow-hidden h-12">
                       {/* Glow stroke effect */}
                       <div className="absolute inset-0 bg-green-500/20 rounded-xl blur-md -z-10"></div>
                       <div className="absolute inset-0 bg-green-400/15 rounded-xl blur-lg -z-10 scale-110"></div>
                       <div className="absolute inset-0 bg-green-300/10 rounded-xl blur-xl -z-10 scale-125"></div>
-                      <img src="/whatsapp.png" alt="WhatsApp" className="w-16 h-16 object-contain relative z-10" />
+                      <Image src="/whatsapp.png" alt="Logo WhatsApp" width={1920} height={1080} loading="lazy" decoding="async" className="w-16 h-16 object-contain relative z-10" />
                       <span className="relative z-10 text-base">Hubungi Admin</span>
                     </button>
                   </a>

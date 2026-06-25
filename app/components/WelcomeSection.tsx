@@ -37,7 +37,7 @@ const WelcomeSection: React.FC<WelcomeSectionProps> = ({ 'data-aos': dataAos }) 
             
             <div className="bg-gradient-to-r from-green-50 to-transparent px-6 py-4 rounded-lg">
               <p className="text-lg md:text-xl lg:text-2xl font-semibold text-green-700 italic">
-                "Penyembuhan Alami Pusaka Mandar"
+                &quot;Penyembuhan Alami Pusaka Mandar&quot;
               </p>
             </div>
 

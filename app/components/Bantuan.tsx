@@ -55,7 +55,10 @@ const Bantuan: React.FC<BantuanProps> = ({ 'data-aos': dataAos }) => {
               <div className="relative z-10">
                 <button
                   className="w-full flex justify-between items-center p-8 text-left group"
+                  type="button"
                   onClick={() => toggleFAQ(index)}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <h3 className="text-xl font-semibold text-gray-900">{faq.question}</h3>
                   <span className="ml-4 text-green-900 text-2xl font-medium w-8 h-8 flex items-center justify-center rounded-full bg-green-50 group-hover:bg-green-100 transition-colors">
@@ -64,7 +67,7 @@ const Bantuan: React.FC<BantuanProps> = ({ 'data-aos': dataAos }) => {
                 </button>
                 
                 {openIndex === index && (
-                  <div className="px-8 pb-8 text-gray-700 pt-2 text-lg leading-relaxed">
+                  <div id={`faq-answer-${index}`} className="px-8 pb-8 text-gray-700 pt-2 text-lg leading-relaxed">
                     {faq.answer.split('\n').map((paragraph, pIndex) => (
                       <p key={pIndex} className={pIndex > 0 ? 'mt-4' : ''}>
                         {paragraph}
